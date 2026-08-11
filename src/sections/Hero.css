@@ -1,0 +1,100 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem; /* Account for navbar */
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-container.premium-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.premium-centered .hero-content {
+  align-items: center;
+}
+
+.premium-centered .hero-description {
+  text-align: center;
+  max-width: 600px;
+  font-size: 1.25rem;
+}
+
+.premium-centered .hero-name {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.premium-centered .hero-actions {
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-greeting {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  color: var(--text-primary);
+  margin: -0.5rem 0;
+}
+
+.hero-title {
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-wrap: balance;
+  margin-top: 0.5rem;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.social-icon:hover {
+  color: var(--accent-secondary);
+}
