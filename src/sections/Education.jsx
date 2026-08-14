@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { education, certifications } from '../data/portfolioData';
 import './Education.css';
@@ -91,7 +91,14 @@ const Education = () => {
                     <Award size={20} className="text-accent" />
                   </div>
                   <div className="cert-content">
-                    <h4 className="cert-name">{cert.name}</h4>
+                    <h4 className="cert-name" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      {cert.name}
+                      {cert.link && (
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-accent" style={{ display: 'flex', alignItems: 'center' }} title="View Certificate">
+                          <ExternalLink size={14} />
+                        </a>
+                      )}
+                    </h4>
                     <p className="cert-issuer text-muted">
                       {cert.issuer} <span className="meta-separator">•</span> {cert.year}
                     </p>

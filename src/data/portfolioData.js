@@ -157,16 +157,25 @@ export const certifications = [
   {
     name: "Introduction to Python",
     issuer: "Infosys",
-    year: "2023"
+    year: "2023",
+    link: "/cert_python_infosys.pdf"
   },
   {
     name: "Introduction to Operating Systems",
     issuer: "NPTEL",
-    year: "2025"
+    year: "2025",
+    link: "/cert_os_nptel.jpg"
   },
   {
     name: "Fundamentals of Artificial Intelligence",
     issuer: "Wadhwani Foundation",
-    year: "2026"
+    year: "2026",
+    link: "/cert_ai_wadhwani.pdf"
+  },
+  {
+    name: "Introduction to Generative AI",
+    issuer: "Simplilearn",
+    year: "2026",
+    link: "/genai_certificate.jpg"
   }
 ];
