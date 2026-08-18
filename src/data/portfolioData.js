@@ -74,7 +74,7 @@ export const experience = [
     role: "Web Development Intern",
     company: "CODTECH IT SOLUTIONS PRIVATE LIMITED",
     location: "Hyderabad, India",
-    period: "Jun 2025 – Aug 2025",
+    period: "May 2025 – July 2025",
     responsibilities: [
       "Developed and deployed responsive, database-driven web applications using HTML, CSS, JavaScript, PHP, and MySQL, ensuring seamless cross-browser compatibility.",
       "Engineered secure backend functionality, integrating databases and implementing robust user authentication features.",
