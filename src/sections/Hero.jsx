@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Mail, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
-import InteractiveBackground from '../components/InteractiveBackground';
 import './Hero.css';
 
 const containerVariants = {
@@ -28,16 +27,25 @@ const itemVariants = {
 };
 
 const Hero = () => {
+  const containerRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.2, 0]);
+
   return (
-    <section className="hero" id="hero" style={{ position: 'relative' }}>
-      <InteractiveBackground />
-      
+    <section className="hero" ref={containerRef} id="hero">
       <div className="container hero-container premium-centered">
         <motion.div 
           className="hero-content"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          style={{ y: textY, opacity: textOpacity }}
         >
           <motion.p variants={itemVariants} className="hero-greeting text-accent">
             {personalInfo.shortIntro}
@@ -47,7 +55,7 @@ const Hero = () => {
             {personalInfo.name}
           </motion.h1>
           
-          <motion.h2 variants={itemVariants} className="hero-title text-accent h3">
+          <motion.h2 variants={itemVariants} className="hero-title h3">
             {personalInfo.title}
           </motion.h2>
           
